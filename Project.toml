@@ -2,3 +2,9 @@ name = "ClassicalAndQuantumFIMs"
 uuid = "af1c3194-0b7d-4af1-8e44-15d8583e2c2f"
 authors = ["Scott <ilikeducks546@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+OQSmodels = "67cd9eb3-fd8b-4719-9b75-e4624b1b85a1"
+QuantumOpticsBase = "4f57444f-1401-5e15-980d-4471b28d5678"
+ThreadsX = "ac1d9e8a-700a-412c-b207-f0111f4b6c0d"
