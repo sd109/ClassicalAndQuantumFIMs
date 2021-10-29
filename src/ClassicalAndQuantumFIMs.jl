@@ -183,5 +183,28 @@ end
 
 
 
+
+
+function fast_QFIM_trace(m::OQSmodel, FoM, diff_params::Vector{T} where T <: DiffParam)
+
+    state = FoM(m)
+    state_dim = size(state, 1)
+    
+    if typeof(state) <: DataOperator #If so, we have likely forgotten to extract op's data field in FoM so fix that here
+        state = state.data
+        FoM = data ∘ FoM
+    end
+
+    vals, U = eigen(state)
+    vecs = collect(eachcol(U))
+    deriv_list = ModelGradient(m, FoM, diff_params).grad_vec
+
+    QFI(vals, vecs, dρ) = 2*sum(abs2(dot(vecs[i], dρ, vecs[j]))/(vals[i]+vals[j]) for i in 1:state_dim for j in 1:state_dim)
+
+    return ThreadsX.mapreduce(d -> QFI(vals, vecs, d), +, deriv_list)
+end
+
+
+
 end #Module 
 
