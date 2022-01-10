@@ -1,6 +1,6 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.7.1"
+julia_version = "1.7.0"
 manifest_format = "2.0"
 
 [[deps.AbstractFFTs]]
@@ -537,7 +537,7 @@ version = "0.3.12"
 
 [[deps.OQSmodels]]
 deps = ["FiniteDiff", "FiniteDifferences", "IterTools", "LinearAlgebra", "PauliMasterEquation", "PyCall", "QuantumOptics", "Reexport", "Roots", "Statistics"]
-path = "../OQSmodels"
+path = "/home/sd109/.julia/dev/OQSmodels"
 uuid = "67cd9eb3-fd8b-4719-9b75-e4624b1b85a1"
 version = "0.1.0"
 
